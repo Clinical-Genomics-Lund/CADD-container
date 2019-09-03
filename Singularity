@@ -7,7 +7,7 @@ From:nfcore/base
 	VERSION 0.0.1
 
 %environment
-	export TMPDIR=/data/tmp
+#	export TMPDIR=/data/tmp # test might inherit host environment TMPDIR
 %files
 	/data/bnf/sw/cadd/1.5/CADD-scripts/ /opt/cadd/
 	cadd_environment.yml /
@@ -16,4 +16,3 @@ From:nfcore/base
 %post
 	/opt/conda/bin/conda env create -f /cadd_environment.yml
 	/opt/conda/bin/conda clean -a
-#	mv /GRCh37/ /opt/cadd/CADD-scripts/data/annotations/GRCh37_v1.4
