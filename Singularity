@@ -3,7 +3,7 @@ From:nfcore/base
 
 %labels
 	MAINTAINER Viktor henmyr <viktor.henmyr@skane.se>
-	DESCRIPTION Singularity container for CADD 1.4
+	DESCRIPTION Singularity container for CADD 1.5
 	VERSION 0.0.1
 
 %environment
