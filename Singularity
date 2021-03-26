@@ -9,9 +9,9 @@ From:nfcore/base
 %environment
 #	export TMPDIR=/data/tmp # test might inherit host environment TMPDIR
 %files
-	/data/bnf/sw/cadd/1.5/CADD-scripts/ /opt/cadd/
-	cadd_environment.yml /
-	/trannel/cadd_1.5_hg38/data/annotations/GRCh38_v1.5/ /opt/cadd/data/annotations/GRCh38_v1.5/
+	/trannel/cadd_1.5_hg38 /opt/cadd/
+	cadd.patch /
 %post
-	/opt/conda/bin/conda env create -f /cadd_environment.yml
+	/opt/conda/bin/conda env create -f /opt/cadd/src/environment_v1.5.yml
 	/opt/conda/bin/conda clean -a
+	patch /opt/cadd/CADD.sh cadd.patch

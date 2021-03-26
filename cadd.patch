@@ -1,0 +1,29 @@
+--- /trannel/cadd_1.5_hg38/CADD.sh	2020-01-08 08:48:45.119889248 +0100
++++ /data/bnf/sw/cadd/1.5/CADD-scripts/CADD.sh	2019-09-02 15:00:07.454898800 +0200
+@@ -12,7 +12,6 @@
+ 
+ unset OPTARG
+ unset OPTIND
+-export LC_ALL=C
+ 
+ GENOMEBUILD="GRCh38"
+ ANNOTATION=false
+@@ -122,12 +121,12 @@
+ ### Pipeline
+ 
+ # Loading the environment
+-if [ "$VERSION" == "v1.4" ]
+-then
+-    source activate cadd-env
+-else
+-    source activate cadd-env-v1.5
+-fi
++#if [ "$VERSION" == "v1.4" ]    ##Viktor 2019-09-02 activating conda-env in sh causes error, handled elsewhere
++#then
++#    source activate cadd-env
++#else
++#    source activate cadd-env-v1.5
++#fi
+ 
+ # File preparation
+ if [ "$FILEFORMAT" == "vcf" ]
